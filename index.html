@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowboard — Live Collaborative Kanban</title>
+    <meta name="description" content="A fast, accessible Kanban board with drag-and-drop, undo/redo, real-time conflict handling, and rich text cards." />
+    <script>
+      // No-flash theme init
+      (function () {
+        try {
+          var t = localStorage.getItem('flowboard-theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
